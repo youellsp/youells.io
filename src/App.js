@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import logo from './patrick_bitmoji.png';
 import './App.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,6 +8,9 @@ import { faFileDownload } from '@fortawesome/free-solid-svg-icons';
 import Tooltip from '@material-ui/core/Tooltip';
 import { makeStyles } from '@material-ui/core';
 import resume from './file-downloads/pyouells_ui_lead_resume.pdf';
+
+ReactGA.initialize('UA-115488087-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const useStyles = makeStyles(theme => ({
   fab: {
@@ -19,8 +23,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const logDownloadEvent = () => {
+  ReactGA.event({
+    category: 'Resume',
+    action: 'Clicked download resume'
+  });
+};
+
 function App() {
   const classes = useStyles();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -31,7 +43,7 @@ function App() {
         <code>
           A <strong>Full Stack</strong> React and Node JS Developer
         </code>
-        <div>
+        <div style={{'marginTop': '20px'}}>
           <Tooltip title="Check out my LinkedIn" aria-label="Checkout My LinkedIn!" placement="left-start">
             <a
                 className="App-link"
@@ -39,22 +51,23 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-              <FontAwesomeIcon size="1.5x" className="font-awesome" icon={faLinkedinIn} />
+              <FontAwesomeIcon size="2x" className="font-awesome" icon={faLinkedinIn} />
             </a>
           </Tooltip>
           <Tooltip title="Download my resume" aria-label="Download My Resume" placement="right-start">
             <a
                 className="App-link"
                 href={resume}
+                onClick={logDownloadEvent}
                 target="_blank"
                 download="patrick_youells_resume.pdf"
             >
-              <FontAwesomeIcon size="1.5x" className="font-awesome" icon={faFileDownload} />
+              <FontAwesomeIcon size="2x" className="font-awesome" icon={faFileDownload} />
             </a>
           </Tooltip>
         </div>
         <div>
-          <code style={{'font-size': '8px'}}>
+          <code style={{'fontSize': '10px'}}>
             More coming soon...
           </code>
         </div>
