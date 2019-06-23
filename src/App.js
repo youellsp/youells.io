@@ -6,9 +6,7 @@ import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faFileDownload } from '@fortawesome/free-solid-svg-icons';
 import Tooltip from '@material-ui/core/Tooltip';
 import { makeStyles } from '@material-ui/core';
-import Fab from "@material-ui/core/Fab";
 import resume from './file-downloads/pyouells_ui_lead_resume.pdf';
-
 
 const useStyles = makeStyles(theme => ({
   fab: {
