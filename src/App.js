@@ -34,7 +34,7 @@ function App() {
           A <strong>Full Stack</strong> React and Node JS Developer
         </code>
         <div>
-          <Tooltip title="Check out My LinkedIn!" aria-label="Checkout My LinkedIn!" placement="left-start">
+          <Tooltip title="Check out my LinkedIn" aria-label="Checkout My LinkedIn!" placement="left-start">
             <a
                 className="App-link"
                 href="https://www.linkedin.com/in/patrick-youells-2919a559/"
@@ -44,7 +44,7 @@ function App() {
               <FontAwesomeIcon size="1.5x" className="font-awesome" icon={faLinkedinIn} />
             </a>
           </Tooltip>
-          <Tooltip title="Download My Resume" aria-label="Download My Resume" placement="right-start">
+          <Tooltip title="Download my resume" aria-label="Download My Resume" placement="right-start">
             <a
                 className="App-link"
                 href={resume}
