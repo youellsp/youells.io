@@ -19,6 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "deploy": "react-scripts build && aws s3 sync build/ s3://aws-website-youellsio-s9csf --acl public-read",
+    "deploy-test": "react-scripts build && aws s3 sync build/ s3://testing.youells.io --acl public-read",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
